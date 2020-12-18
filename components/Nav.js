@@ -8,7 +8,7 @@ export default function Nav({ banner }) {
 
   return (
     banner && (
-      <nav className="bg-gray-900 h-96 shadow">
+      <nav className="bg-gray-900 shadow" style={{height: '28rem'}}>
         <div
           className="bg-cover bg-center bg-no-repeat w-full h-full"
           style={{
@@ -19,7 +19,7 @@ export default function Nav({ banner }) {
             <Card item={banner} />
             <div className="w-96 pl-8">
               <div className="h-20">
-                <p class="text-2xl text-white font-bold">{banner.title}</p>
+                <p className="text-2xl text-white font-bold">{banner.title}</p>
                 <div className="flex items-center mt-4">
                   <p className="text-sm text-gray-100 font-light">
                     {releaseYear.getFullYear()}
@@ -35,11 +35,11 @@ export default function Nav({ banner }) {
               <div className="h20 flex">
                 <button className="flex items-center py-2 px-2 capitalize bg-white text-gray-900 font-medium rounded hover:bg-gray-200">
                   <BsFillPlayFill size="24" />
-                  <span class="mx-1 text-sm">Assistir</span>
+                  <span className="mx-1 text-sm">Assistir</span>
                 </button>
                 <button className="flex items-center py-2 px-2 ml-4 capitalize bg-gray-700 text-white font-medium rounded hover:bg-gray-800">
                   <BsInfoCircle size="24" />
-                  <span class="mx-1 text-sm">Mais informações</span>
+                  <span className="mx-1 text-sm">Mais informações</span>
                 </button>
               </div>
             </div>

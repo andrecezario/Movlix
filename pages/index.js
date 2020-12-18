@@ -2,24 +2,36 @@ import { React, useEffect, useState } from "react";
 import Head from "next/head";
 import Nav from "../components/Nav";
 import Card from "../components/Card2";
+import Carousel from "../components/Carousel";
+
 import { get } from "../services/api";
 
 export default function Home() {
   const [banner, setBanner] = useState({});
-  const [movies, setMovies] = useState([]);
+  const [popular, setPopular] = useState([]);
+  const [releases, setReleases] = useState([]);
 
   useEffect(async () => {
-    const retorno = await get(
+    const resultPopular = await get(
       `movie/popular?api_key=${process.env.REACT_API_KEY}&language=pt-BR&page=1`
     );
-    if (retorno.status === 200) {
-      setMovies(retorno.data.results);
-      setBanner(retorno.data.results[0]);
+
+    const resultReleases = await get(
+      `movie/now_playing?api_key=${process.env.REACT_API_KEY}&language=pt-BR&page=1`
+    );
+
+    if (resultPopular.status === 200) {
+      setPopular(resultPopular.data.results);
+      setBanner(resultPopular.data.results[0]);
+    }
+
+    if (resultReleases.status === 200) {
+      setReleases(resultReleases.data.results);
     }
   }, []);
 
   return (
-    <div className="bg-gray-900">
+    <div className="w-full h-full">
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,13 +39,13 @@ export default function Home() {
 
       <Nav banner={banner} />
 
-      <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {movies.map((item) => (
-          <div className="flex justify-center">
-            <Card item={item} />
-          </div>
-        ))}
-      </div>
+      {popular?.length && (
+        <Carousel items={popular} title="Populares" infinite={true} />
+      )}
+
+      {releases?.length && (
+        <Carousel items={releases} title="Novidades" infinite={true} />
+      )}
     </div>
   );
 }
