@@ -41,7 +41,7 @@ export default function CarouselItems({
   return (
     items?.length && (
       <div className="w-full p-4">
-        <p className="text-2xl text-white font-bold ml-2">{title}</p>
+        <p className="text-2xl text-white font-bold ml-2 mb-2">{title}</p>
         <Carousel
           additionalTransfrom={0}
           arrows
