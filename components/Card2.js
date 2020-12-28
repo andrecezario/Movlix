@@ -1,18 +1,26 @@
 import React from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { actions } from '../store/ducks/movies';
 
 import { BiListPlus } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineInfoCircle } from "react-icons/ai"
 
 export default function Card1({ item }) {
   const [hoverCard, setHoverCard] = React.useState(false);
+  const favorites = useSelector((state) => state.movies.favorites);
+  const list = useSelector((state) => state.movies.list);
+  const dispatch = useDispatch();
 
   const addFavoriteMovie = () => {
-    localStorage.setItem('@movlix/favorites', JSON.stringify(item))
+    dispatch(actions.favor(item));
+    console.log('Favoritos => ', favorites)
+    // localStorage.setItem('@movlix/favorites', JSON.stringify(item))
   }
 
   const addListMovie = () => {
-
-    localStorage.setItem('@movlix/list', JSON.stringify(item))
+    dispatch(actions.addList(item));
+    console.log('Minha Lista => ', list)
+    // localStorage.setItem('@movlix/list', JSON.stringify(item))
   }
 
   const showDetailsMovie = () => {
@@ -44,7 +52,7 @@ export default function Card1({ item }) {
               <button
                 onClick={addFavoriteMovie}
                 onMouseEnter={() => setHoverCard(true)}
-                className="w-full flex items-center bg-red-600 rounded-full my-1 py-2 px-4 text-sm font-bold text-white focus:outline-none"
+                className="w-full flex items-center bg-green-500 rounded-full my-1 py-2 px-4 text-sm font-bold text-white focus:outline-none"
               >
                 <AiOutlineHeart size="24" /> Favoritos
               </button>

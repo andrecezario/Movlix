@@ -18,7 +18,7 @@ export default function Nav({ banner }) {
                   class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                   aria-expanded="false"
                 >
-                  <span class="sr-only">Open main menu</span>
+                  <span class="sr-only">Abrir menu</span>
                   <svg
                     class="block h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,13 +55,13 @@ export default function Nav({ banner }) {
                 <div class="flex-shrink-0 flex items-center">
                   <img
                     class="block lg:hidden h-8 w-auto"
-                    src="https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-1-1.png"
-                    alt="Workflow"
+                    src="/images/logo.png"
+                    alt="Logo"
                   />
                   <img
                     class="hidden lg:block h-8 w-auto"
-                    src="https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-1-1.png"
-                    alt="Workflow"
+                    src="/images/logo.png"
+                    alt="Logo"
                   />
                 </div>
                 <div class="hidden sm:block sm:ml-6">
@@ -163,25 +163,19 @@ export default function Nav({ banner }) {
                 href="#"
                 class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                Dashboard
+                Home
               </a>
               <a
                 href="#"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                Team
+                Favoritos
               </a>
               <a
                 href="#"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                Projects
-              </a>
-              <a
-                href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Calendar
+                Minha Lista
               </a>
             </div>
           </div>
