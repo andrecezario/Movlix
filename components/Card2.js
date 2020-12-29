@@ -7,20 +7,14 @@ import { AiOutlineHeart, AiOutlineInfoCircle } from "react-icons/ai"
 
 export default function Card1({ item }) {
   const [hoverCard, setHoverCard] = React.useState(false);
-  const favorites = useSelector((state) => state.movies.favorites);
-  const list = useSelector((state) => state.movies.list);
   const dispatch = useDispatch();
 
   const addFavoriteMovie = () => {
     dispatch(actions.favor(item));
-    console.log('Favoritos => ', favorites)
-    // localStorage.setItem('@movlix/favorites', JSON.stringify(item))
   }
 
   const addListMovie = () => {
     dispatch(actions.addList(item));
-    console.log('Minha Lista => ', list)
-    // localStorage.setItem('@movlix/list', JSON.stringify(item))
   }
 
   const showDetailsMovie = () => {

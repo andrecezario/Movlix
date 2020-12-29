@@ -3,6 +3,7 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import Card from "../components/Card2";
 import Carousel from "../components/Carousel";
+import Banner from "../components/Banner"
 
 import { get } from "../services/api";
 
@@ -22,7 +23,7 @@ export default function Home() {
 
     if (resultPopular.status === 200) {
       setPopular(resultPopular.data.results);
-      setBanner(resultPopular.data.results[0]);
+      setBanner(resultPopular.data.results[3]);
     }
 
     if (resultReleases.status === 200) {
@@ -37,7 +38,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Nav banner={banner} />
+      <Nav />
+      <Banner banner={banner} />
 
       {popular?.length && (
         <Carousel items={popular} title="Populares" infinite={true} />
