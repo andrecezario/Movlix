@@ -14,7 +14,7 @@ export default function Favorites() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <div className="w-full h-full flex flex-wrap justify-center">
+      <div className="w-full h-full flex flex-wrap justify-center p-8">
         {favorites.map((movie) => (
           <Card item={movie} />
         ))}

@@ -14,7 +14,7 @@ export default function List() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <div className="w-full h-full flex flex-wrap justify-center">
+      <div className="w-full h-full flex flex-wrap justify-center p-8">
         {list.map((movie) => (
           <Card item={movie} />
         ))}

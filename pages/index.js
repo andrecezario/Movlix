@@ -23,13 +23,22 @@ export default function Home() {
 
     if (resultPopular.status === 200) {
       setPopular(resultPopular.data.results);
-      setBanner(resultPopular.data.results[3]);
+      setBanner(resultPopular.data.results[0]);
     }
 
     if (resultReleases.status === 200) {
       setReleases(resultReleases.data.results);
     }
   }, []);
+
+  useEffect(() => {
+
+  }, [popular])
+
+
+  useEffect(() => {
+
+  }, [releases])
 
   return (
     <div className="w-full h-full">
@@ -39,7 +48,8 @@ export default function Home() {
       </Head>
 
       <Nav />
-      <Banner banner={banner} />
+
+      {Object.keys(banner).length && <Banner banner={banner} />}
 
       {popular?.length && (
         <Carousel items={popular} title="Populares" infinite={true} />
