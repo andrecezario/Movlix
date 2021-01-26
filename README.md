@@ -7,8 +7,8 @@
 Faça o download do código [ou clone o repositório](https://github.com/andrecezario/movlix):
 
 ```sh
-git clone https://github.com/andrecezario/findme
-cd findme
+git clone https://github.com/andrecezario/movlix
+cd movlix
 ```
 
 Instale as dependências e execute:
