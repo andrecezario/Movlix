@@ -9,7 +9,7 @@ import reducers from './ducks';
 const persistConfig = {
   key: 'root',
   storage,
-  whiteList: ['coordinates'],
+  whiteList: ['coordinates']
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

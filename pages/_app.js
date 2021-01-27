@@ -1,13 +1,13 @@
-import "../styles.css";
-import { store } from "../store";
-import { Provider } from "react-redux";
+import '../styles.css';
+import { store } from '../store';
+import { Provider } from 'react-redux';
 
 function App({ Component, pageProps }) {
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<Component {...pageProps} />
+		</Provider>
+	);
 }
 
 export default App;

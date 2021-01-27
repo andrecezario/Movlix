@@ -1,18 +1,17 @@
-import { React, useEffect } from "react";
-import Card from "../components/Card1";
-import { BsFillPlayFill, BsInfoCircle } from "react-icons/bs";
+import { React, useEffect } from 'react';
+import Card from './Card1';
+import { BsFillPlayFill, BsInfoCircle } from 'react-icons/bs';
 
 export default function Banner({ banner }) {
   const releaseYear = new Date(banner.release_date);
-  const url = process.env.REACT_IMAGE+'original/'+banner.backdrop_path
-  
+  const url = process.env.REACT_IMAGE + 'original/' + banner.backdrop_path;
+
   return (
     <div
-      className="bg-gray-900 shadow bg-gradient-to-l from-black from-gray-900 bg-cover bg-center bg-no-repeat w-full h-full"
+      className="bg-gray-900 shadow bg-gradient-to-l from-black from-gray-900 bg-cover bg-top bg-no-repeat w-full h-full"
       style={{
-        backgroundImage: `url(${url})`,
-      }}
-    >
+        backgroundImage: `url(${url})`
+      }}>
       <div className="flex justify-center items-center md:justify-start w-full h-full p-8 bg-opacity-70 bg-gradient-to-r from-black from-gray-900">
         <div className="hidden sm:block">
           <Card item={banner} />

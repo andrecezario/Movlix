@@ -2,13 +2,13 @@ const response = (res) => {
   try {
     return {
       status: res.status,
-      data: res.data,
+      data: res.data
     };
   } catch (err) {
     return {
       status: err.status || 500,
       message: 'Internal server error',
-      error: err.message,
+      error: err.message
     };
   }
 };
@@ -18,13 +18,13 @@ const error = (err) => {
     return {
       status: err.response.status,
       message: err.response.statusText,
-      error: err.response.data,
+      error: err.response.data
     };
   } catch (err) {
     return {
       status: err.status || 500,
       message: 'Internal server error',
-      error: err.message,
+      error: err.message
     };
   }
 };

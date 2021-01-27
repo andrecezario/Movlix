@@ -1,11 +1,11 @@
-import { React, useEffect, useState } from "react";
-import Head from "next/head";
-import Nav from "../components/Nav";
-import Card from "../components/Card2";
-import Carousel from "../components/Carousel";
-import Banner from "../components/Banner"
+import { React, useEffect, useState } from 'react';
+import Head from 'next/head';
+import Nav from '../components/Nav';
+import Card from '../components/Card2';
+import Carousel from '../components/Carousel';
+import Banner from '../components/Banner1';
 
-import { get } from "../services/api";
+import { get } from '../services/api';
 
 export default function Home() {
   const [banner, setBanner] = useState({});
@@ -31,19 +31,14 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { }, [popular]);
 
-  }, [popular])
-
-
-  useEffect(() => {
-
-  }, [releases])
+  useEffect(() => { }, [releases]);
 
   return (
     <div className="w-full h-full">
       <Head>
-        <title>Home</title>
+        <title>Movlix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -51,13 +46,9 @@ export default function Home() {
 
       {Object.keys(banner).length && <Banner banner={banner} />}
 
-      {popular?.length && (
-        <Carousel items={popular} title="Populares" infinite={true} />
-      )}
+      {popular?.length && <Carousel items={popular} title="Populares" infinite={true} />}
 
-      {releases?.length && (
-        <Carousel items={releases} title="Novidades" infinite={true} />
-      )}
+      {releases?.length && <Carousel items={releases} title="Novidades" infinite={true} />}
     </div>
   );
 }

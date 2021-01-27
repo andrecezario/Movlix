@@ -1,28 +1,45 @@
 module.exports = {
-    env: {
-      browser: true,
-      es6: true
-    },
-    extends: ["airbnb", "prettier", "prettier/react"],
-    globals: {
-      Atomics: "readonly",
-      SharedArrayBuffer: "readonly",
-      __DEV__: 'readonly'
-    },
-    parser: "babel-eslint",
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true
-      },
-      ecmaVersion: 2018,
-      sourceType: "module"
-    },
-    plugins: ["react", "prettier"],
-    rules: {
-      "prettier/prettier": "error",
-      "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".js"] }],
-      "import/prefer-default-export": "off",
-      "no-param-reassign": "off",
-      "no-console": ["error", { allow: ["tron"] }]
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
     }
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
+  env: {
+    browser: true,
+    amd: true,
+    node: true
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'   // Make sure this is always the last element in the array.
+  ],
+  rules: {
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'simple-import-sort/sort': 'error',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton']
+      }
+    ]
   }
+};

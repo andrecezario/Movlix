@@ -1,5 +1,5 @@
-import { React, useState } from "react";
-import Link from "next/link";
+import { React, useState } from 'react';
+import Link from 'next/link';
 
 export default function Nav() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -9,7 +9,7 @@ export default function Nav() {
   };
 
   return (
-    <div style={{ height: "64px" }}>
+    <div style={{ height: '64px' }}>
       <nav className="bg-gray-800 bg-gradient-to-l from-black from-gray-900 absolute top-0 right-0 w-full z-50">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
@@ -17,8 +17,7 @@ export default function Nav() {
               <button
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-expanded="false"
-                onClick={handleOpenMenu}
-              >
+                onClick={handleOpenMenu}>
                 <span className="sr-only">Abrir menu</span>
                 <svg
                   className="block h-6 w-6"
@@ -26,8 +25,7 @@ export default function Nav() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  aria-hidden="true"
-                >
+                  aria-hidden="true">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -40,8 +38,7 @@ export default function Nav() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                  stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -67,25 +64,19 @@ export default function Nav() {
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
                   <Link href="/">
-                    <a
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
+                    <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                       Home
-                    </a>
+                                        </a>
                   </Link>
                   <Link href="/favorites">
-                    <a
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
+                    <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                       Favoritos
-                    </a>
+                                        </a>
                   </Link>
                   <Link href="/list">
-                    <a
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
+                    <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                       Minha Lista
-                    </a>
+                                        </a>
                   </Link>
                 </div>
               </div>
@@ -98,17 +89,17 @@ export default function Nav() {
               <Link href="/">
                 <a className="text-gray-300 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Home
-                </a>
+                                </a>
               </Link>
               <Link href="/favorites">
                 <a className="text-gray-300 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Favoritos
-                </a>
+                                </a>
               </Link>
               <Link href="/list">
                 <a className="text-gray-300 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Minha Lista
-                </a>
+                                </a>
               </Link>
             </div>
           </div>
