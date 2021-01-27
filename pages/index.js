@@ -31,11 +31,7 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => { }, [popular]);
-
-  useEffect(() => { }, [releases]);
-
-  return (
+  return (popular?.length || releases?.length) && (
     <div className="w-full h-full">
       <Head>
         <title>Movlix</title>
