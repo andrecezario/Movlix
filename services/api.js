@@ -6,7 +6,6 @@ const axios = Axios.create({
 });
 
 const get = async (endpoint, config = {}) => {
-	console.log(process.env.REACT_API_MOVIES, endpoint);
 	return await axios
 		.get(endpoint, config)
 		.then((res) => response(res))

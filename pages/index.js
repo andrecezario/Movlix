@@ -42,9 +42,9 @@ export default function Home() {
 
       {Object.keys(banner).length && <Banner banner={banner} />}
 
-      {popular?.length && <Carousel items={popular} title="Populares" infinite={true} />}
+      {<Carousel items={popular} title="Populares" infinite={true} />}
 
-      {releases?.length && <Carousel items={releases} title="Novidades" infinite={true} />}
+      {<Carousel items={releases} title="Novidades" infinite={true} />}
     </div>
   );
 }

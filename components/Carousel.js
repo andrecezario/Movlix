@@ -11,7 +11,7 @@ import {
 
 import Card from '../components/Card2';
 
-export default function CarouselItems({ items, title = '', infinite = false, autoPlay = false }) {
+export default function CarouselItems({ items = [], title = '', infinite = false, autoPlay = false }) {
     const CustomRight = ({ onClick }) => (
         <button
             className="justify-center items-center absolute top-1/2 -right-4 focus:outline-none"
@@ -26,8 +26,6 @@ export default function CarouselItems({ items, title = '', infinite = false, aut
             <BsChevronCompactLeft size="48" color="white" />
         </button>
     );
-
-    useEffect(() => { }, [items]);
 
     return (
         items?.length && (

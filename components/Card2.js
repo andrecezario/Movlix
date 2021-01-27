@@ -53,7 +53,7 @@ export default function Card1({ item, disfavor = false, delist = false }) {
                 onClick={addListMovie}
                 onMouseEnter={() => setHoverCard(true)}
                 className="w-full flex items-center bg-gray-800 rounded-full my-2 py-2 px-4 text-sm font-bold text-white focus:outline-none">
-                {delist ? <BiListPlus size="24" /> : <BiListMinus size="24" />} {delist ? 'Remover' : 'Minha lista'}
+                {delist ? <BiListMinus size="24" /> : <BiListPlus size="24" />} {delist ? 'Remover' : 'Minha lista'}
               </button>
               <button
                 onClick={addFavoriteMovie}

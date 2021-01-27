@@ -39,7 +39,6 @@ export default function movies(state = initialState, action) {
       return { ...initialState, favorites: state.favorites };
 
     case types.disfavor:
-      console.log(payload.id)
       const newFavorites = state.favorites.filter((movie) => movie.id != payload);
       return { ...state, favorites: newFavorites };
 
